@@ -1,0 +1,44 @@
+# Entorno único para los 5 días del taller.
+# Crear con:  conda env create -f environment.yml
+# Activar con: conda activate splus-workshop
+name: splus-workshop
+channels:
+  - conda-forge
+dependencies:
+  - python=3.11
+
+  # --- Núcleo científico (todos los días) ---
+  - numpy
+  - scipy
+  - pandas
+  - matplotlib
+
+  # --- Astronomía ---
+  - astropy            # tablas, WCS, cosmología, FITS, convolución PSF
+  - astroquery         # SIMBAD / VizieR / CDS desde Python (día 1)
+  - photutils          # fotometría de apertura, perfiles de brillo (día 3)
+  - sep                # Source Extractor como librería de Python (día 2)
+  - regions            # regiones del cielo
+  - reproject          # remuestreo de imágenes entre WCS
+
+  # --- Simulaciones (día 5) ---
+  - h5py               # leer los HDF5 de IllustrisTNG / TNG50
+
+  # --- Notebooks ---
+  - jupyterlab
+  - ipykernel
+  - ipywidgets
+
+  # --- Calidad de vida ---
+  - tqdm
+  - pip
+  - pip:
+      - splusdata      # acceso a catálogos e imágenes de S-PLUS (día 3+)
+      - nbstripout     # limpiar salidas de notebooks antes de commitear
+
+# Nota: Source Extractor (CLI) y PSFEx del día 2 son herramientas externas de AstrOmatic.
+# En clase probablemente se usen instaladas en el sistema. Si querés la CLI localmente:
+#   conda install -c conda-forge astromatic-source-extractor psfex
+# Alternativamente, 'sep' (arriba) cubre casi todo el flujo desde Python.
+# SKIRT (día 5) es un código C++ externo; el hands-on solo procesa su salida FITS,
+# así que no hace falta instalarlo: alcanza con astropy.

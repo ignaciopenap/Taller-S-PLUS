@@ -1,0 +1,57 @@
+# ---- Datos astronómicos pesados (NO versionar) ----
+# GitHub tiene un límite duro de 100 MB por archivo. Los FITS, cubos y HDF5
+# se regeneran desde la proveniencia documentada en cada dayNN/data/README.md.
+*.fits
+*.fit
+*.fits.fz
+*.fz
+*.hdf5
+*.h5
+*.fz
+*.cube
+*.vot.gz
+# VOTables grandes: ignoradas por defecto. Si querés versionar un ejemplo
+# chico, forzalo con:  git add -f day01-.../data/muestra.vot
+*.vot
+
+# ---- Contenido de las carpetas data/ salvo su README ----
+day*/data/*
+!day*/data/README.md
+!day*/data/.gitkeep
+
+# ---- Salidas pesadas ----
+outputs/
+*.mp4
+*.avi
+
+# ---- Python ----
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+env/
+.python-version
+
+# ---- Jupyter ----
+.ipynb_checkpoints/
+# Consejo: limpiá las salidas antes de commitear con nbstripout
+# (pip install nbstripout && nbstripout --install)
+
+# ---- Source Extractor / PSFEx (día 2) ----
+*.cat
+check_*.fits
+*.psf
+segmentation*.fits
+background*.fits
+
+# ---- Sistema / editor ----
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# ---- Credenciales (¡nunca subir!) ----
+.splus_credentials
+*.token
+.env
