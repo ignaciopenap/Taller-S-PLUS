@@ -20,7 +20,7 @@ dependencies:
   - sep                # Source Extractor como librería de Python (día 2)
   - regions            # regiones del cielo
   - reproject          # remuestreo de imágenes entre WCS
-
+  - cyler              # no se que es bien
   # --- Simulaciones (día 5) ---
   - h5py               # leer los HDF5 de IllustrisTNG / TNG50
 
@@ -28,6 +28,7 @@ dependencies:
   - jupyterlab
   - ipykernel
   - ipywidgets
+  - ipympl
 
   # --- Calidad de vida ---
   - tqdm
